@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+
+    <title>Teste Front End - Anima Educacao</title>
+    <meta name="description" content="Teste Front End - Anima Educacao"/>
+    <meta name="keywords" content="Teste Front End - Anima Educacao"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="googlebot" content="index,follow"/>
+    <meta name="distribution" content="global"/>
+    <meta name="rating" content="General"/>
+    <meta name="language" content="pt-br"/>
+    <meta name="url" content=""/>
+    <meta name="doc-class" content="completed"/>
+    <meta name="doc-rights" content="public"/>
+    <meta name="autor" content="Braulio Mateus"/>
+    <meta name="company" content="Anima Educacao">
+    <meta name="revisit-after" content="1"/>
+
+    <!-- VUE -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/lpbootstrap.css" rel="stylesheet">
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,700i" rel="stylesheet">
+
+    <!------ Carousel ---------->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- Datatable -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/plug-ins/f2c75b7247b/integration/bootstrap/3/dataTables.bootstrap.css">
+   
+
+    <!-- Medias -->
+    <link href="css/media-geral.css" rel="stylesheet">
+    <link href="css/media-xsss.css" rel="stylesheet" media="(min-width: 1px) and (max-width: 320px)">
+    <link href="css/media-xss.css" rel="stylesheet" media="(min-width: 321px) and (max-width: 375px)">
+    <link href="css/media-xs.css" rel="stylesheet" media="(min-width: 376px) and (max-width: 425px)">
+    <link href="css/media-sm.css" rel="stylesheet" media="(min-width: 426px) and (max-width: 767px)">
+    <link href="css/media-md.css" rel="stylesheet" media="(min-width: 768px) and (max-width: 991px)">
+    <link href="css/media-mdd.css" rel="stylesheet" media="(min-width: 992px) and (max-width: 1199px)">
+    <link href="css/media-lg.css" rel="stylesheet" media="(min-width: 1200px) and (max-width: 1440px)">
+    <link href="css/media-xl.css" rel="stylesheet" media="(min-width: 1441px)">
+    <link href="css/style.css" rel="stylesheet">
+
+     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/1.0.4/css/dataTables.responsive.css">
+</head>
+<body>
+
+
+	
+    <header class="header">
+        <div class="container">         
+            <nav class="header_menu menu-nav">
+                <div class="row">
+                    <div class="col-lg-3 col-md-12 col-mdd-12" style="display: inline-block; cursor: pointer; float: left;">
+                        <a href="#">
+                            <img class="logo" src="img/logo.png" alt="logo">
+                        </a>
+                    </div>
+                    <div class="col-lg-9 col-md-12 col-mdd-12" style="max-width: 100%">
+                        <ul>
+                            <li><a class="active" href="#">Home </a></li>
+                            <li><a href="#">Menu-1</a></li>
+                            <li><a href="#">Menu-2</a></li>
+                            <li><a href="#">Menu-3</a></li>
+                            <li><a style="color: #1DA584; font-weight: 600">Contato </a></li>
+                        </ul>
+                    </div>  
+                </div>  
+            </nav>
+        </div>
+    </header>
+
+    <!-- TOPO -->
+    <div id="app">
+    <section class="container-fluid" style="margin: 25px 0 0 0">
+    	<div class="col-12">
+    		<!-- <div class="row"> -->
+    		<span style="color: #1DA584">covid19</span><br>
+    		<h3 style="margin: 0"><strong>Painel</strong> Coronavírus</h3>
+    		<span class="size-subtext">Atualizado em: {{dataAtual}}</span>
+    		<!-- </div> -->
+    	</div>
+    </section>
+
+	<section class="container-fluid full">
+	    <!-- PARTE 1 -->
+	    <div class="row" style="margin: 0;">
+	        <!-- BLOCO 1 -->
+	        <div class="col-lg-3 col-xs-12 col-md-6 col-mdd-6" style="text-align: center; padding: 15px; position: inherit;">
+	            <div class='shadow container' style="background-color: #1DA584">
+	                <p class="p-title">Casos Novos (ontem)</p>
+	                <p style="color: #fff; font-weight: 800; text-align: left; font-size: 42px; margin-bottom: 0">{{this.dados.Countries['23'].NewConfirmed | numeroFormatado}}</p>
+
+	                <p class="p-title2">Óbitos (ontem)</p>
+	                <p style="color: #fff; font-weight: 800; text-align: left; font-size: 34px; margin-bottom: 0">{{this.dados.Countries['23'].NewDeaths | numeroFormatado}}</p>
+	            </div>
+	        </div>
+
+	        <!-- BLOCO 2 -->
+	        <div class="col-lg-3 col-md-6 col-mdd-6" style="text-align: center; padding: 15px; border-radius: 15px; position: sticky;">
+	            <div class='shadow line-left-color-green'>
+	            	<div style="display: flex;">
+		                <div class="p-title-card-white" style="width: 85%">
+		                	<span style="text-align: left;">CASOS NO BRASIL</span> 
+		                </div>
+		                <div style="width: 15%">
+			                <button style="text-align: right; border-radius: 50%; border: 1px solid transparent; margin-top: 18px"><i style="color: #1DA584" class="fa fa-arrow-down" aria-hidden="true"></i>
+			                </button>
+		                </div>
+	            	</div>
+	                <div style="display: flex;">
+		                <div style="width: 45%">
+		                	<div class="p-title-card-white2">
+		                		<span class="size-number">{{this.dados.Countries['23'].TotalDeaths | numeroFormatado}}</span>
+		                		<br>
+		                		<span class="size-subtext">Mortes</span>
+		                	</div>
+		                </div>
+
+		                <div style="width: 55%">
+		                	<div class="p-title-card-white2">
+		                		<span class="size-number">{{this.dados.Countries['23'].TotalConfirmed | numeroFormatado}}</span>
+		                		<br>
+		                		<span class="size-subtext">Casos confirmados</span>
+		                	</div>
+		                </div>
+	                </div>
+
+	                <div style="width: 50%">
+	                	<div class="p-title-card-white2">
+	                		<span class="size-number">{{this.dados.Countries['23'].TotalRecovered | numeroFormatado}}</span>
+	                		<br>
+	                		<span class="size-subtext">Recuperados</span>
+	                	</div>
+	                </div>
+	            </div>
+	        </div>
+
+	        <!-- BLOCO 3 -->
+	        <!-- 9a36bb -->
+	        <div class="col-lg-3 col-md-6 col-mdd-6" style="text-align: center; padding: 15px; border-radius: 15px;  position: sticky;">
+	            <div class='shadow line-left-color-purple'>
+	            	<div style="display: flex;">
+		                <div class="p-title-card-white" style="width: 85%">
+		                	<span style="text-align: left; color: #9A36BB">CASOS NO MUNDO</span> 
+		                </div>
+		                <div style="width: 15%">
+			                <button style="text-align: right; border-radius: 50%; border: 1px solid transparent; margin-top: 18px"><i style="color: #9A36BB" class="fa fa-arrow-down" aria-hidden="true"></i>
+			                </button>
+		                </div>
+	            	</div>
+	                <div style="display: flex;">
+		                <div style="width: 45%">
+		                	<div class="p-title-card-white2">
+		                		<span class="size-number">{{this.dados.Global.TotalDeaths | numeroFormatado}}</span>
+		                		<br>
+		                		<span class="size-subtext">Mortes</span>
+		                	</div>
+		                </div>
+
+		                <div style="width: 55%">
+		                	<div class="p-title-card-white2">
+		                		<span class="size-number">{{this.dados.Global.TotalConfirmed | numeroFormatado}}</span>
+		                		<br>
+		                		<span class="size-subtext">Casos confirmados</span>
+		                	</div>
+		                </div>
+	                </div>
+
+	                <div style="width: 50%">
+	                	<div class="p-title-card-white2">
+	                		<span class="size-number">{{this.dados.Global.TotalRecovered | numeroFormatado}}</span>
+	                		<br>
+	                		<span class="size-subtext">Recuperados</span>
+	                	</div>
+	                </div>
+	            </div>
+	        </div>
+
+	        <!-- BLOCO 4 -->
+	        <div class="col-lg-3 col-md-6 col-mdd-6" style="text-align: center; padding: 15px; border-radius: 15px">
+	            <div class='shadow tp-sobre' style="padding-bottom: 20px; height: 100%">
+	            	<div style="display: flex;">
+		                <div class="p-title-card-white" style="width: 85%">
+		                	<span style="text-align: left; color: #9A36BB">Ranking dos Países</span> 
+		                </div>
+	            	</div>
+	                <div style="display: flex;">
+		                <div style="width: 90%">
+		                	<div class="p-title-card-white2" style="padding: 0">
+		                		<span style="font-size: 12px; color: gray">Navegue pelos dados do Sistema, com informações estratégicas e conheça alguns dados sobre a COVID-19 de forma transparente e analítica.</span>
+		                	</div>
+		                	<div style="text-align: left; padding: 35px 0 0 0; ">
+		                		<button style="background-color: #1DA584; border: 0px solid transparent; color: #fff; border-radius: 5px; padding: 5px 25px; font-weight: 600" @click="dropdown()">Confira</button>
+		                		<img class="img-card" alt="" src="img/img-charts.png">
+		                	</div>
+		                </div>        
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</section>
+
+	<section class="container-fluid">
+		<div class="col-lg-12">
+			<div class="row">
+				<div class="card-total width-fuwll">
+
+					<div class="ct-info col-xs-12 col-lg-6">
+						<div class="info-text">
+							<b style="font-size: 20px">Introdução</b>
+							<br>
+							<p style="margin: 10px 0">Este painel foi desenvolvido como um teste para avaliar o conhecimento do candidato em <strong>Front-end e APIs</strong>.</p>
+						</div>
+						<div class="info-text">
+							<b style="font-size: 20px">Apresentação do Projeto</b>
+							<br>
+							<p style="margin: 10px 0">Este é um dashboard com o intuito de mostrar de forma clara e objetiva, os números da pandemia causada pela <strong>COVID-19</strong> (doença causada pelo coronavírus SARS-CoV-2) no Brasil e no mundo. Foi utilizado as tecnologias HTML,CSS,JS e VUE para requisitar os dados da API.</p>
+						</div>
+					</div>
+
+					<div class="ct-cdards col-xs-12 col-lg-6">
+						<div class="card-info width-ful display-flex">
+							<div>
+								<div class="col-lg-8 col-mdd-12 col-md-12">
+									<div style="width: 100%">
+										<p style="width: 100%;
+									    margin-top: 16px;
+									    font-size: 16px;
+									    text-align: left;
+									    line-height: 22px;
+									    letter-spacing: -.26px;
+									    color: rgba(255,255,255,.78);">
+										<b>Portal do COVID-19</b>
+										<br><br>
+										Painel de casos de doença pelo coronavírus 2019 (COVID-19) no Brasil e no mundo.
+										</p>
+									</div>
+									<br>
+								</div>
+								<div class="col-lg-4 col-mdd-12 col-md-12">
+									<img src="img/img-charts-2.png" style="height: 140px">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</section>
+
+<section class="container">
+    <h2 style="text-align: center;">Ranking Covid-19 Por País</h2>
+	<div class="container-fluid card-total">
+	  <div class="row">
+	    <div class="col-lg-12 col-xs-10">
+	      <table summary="This table shows how to create responsive tables using Datatables' extended functionality" class="table table-bordered table-hover dt-responsive width-only-xs">
+	        <thead>
+	          <tr>
+	            <th>#</th>
+	            <th>País</th>
+	            <th>Nº de Casos</th>
+	            <th>Mortes</th>
+	            <th>Recuperados</th>
+	          </tr>
+	        </thead>
+	        <tbody>
+	        </tbody>
+	        <tfoot>
+	          <tr>
+	            <td colspan="5" class="text-center">Dados capturados da API <a href="https://covid19api.com/" target="_blank">https://covid19api.com/</a></td>
+	          </tr>
+	        </tfoot>
+	      </table>
+	    </div>
+	  </div>
+	</div>
+</section>
+
+ <!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-content">
+    </div>
+    <div class="footer-about">
+    	<p>@2020 | Braulio Mateus</p>
+    </div>
+</footer>
+
+<!-- END VUE -->
+</div>
+
+
+<script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script> 
+
+<!-- datatatble -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.5/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/plug-ins/f2c75b7247b/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/responsive/1.0.4/js/dataTables.responsive.js"></script>
+<script type="text/javascript" src="js/vue.js"></script>
+	
+		
+
+
+</body>
+</html>

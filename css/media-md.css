@@ -1,0 +1,118 @@
+@media (min-width: 768px) and (max-width: 991px) {
+  
+    body {
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    @font-face {
+     font-family: AAA;
+     src: url('../fonts/Gotham-Black.otf');
+    }
+    @font-face {
+     font-family: BBB;
+     src: url('../fonts/Gotham-Bold.otf');
+    }
+    
+
+   h1 {
+      font: 34px AAA, Sans-serif;
+      font-style: oblique;
+    }
+
+    h2  {
+      font: 30px AAA, Sans-serif;
+      text-transform: uppercase;
+    }
+
+    span {
+        font: 18px BBB, Sans-serif;
+
+    }
+
+    .shadow {
+        /* formatação do box */
+        width:100%;
+        background:#fff;
+        border-radius:0px;
+        padding:10px;
+        padding-bottom: 40px;
+            
+        /* box shadow */
+        box-shadow: 0 2px 13px 3px rgba(0, 0, 0, 0.2);
+    }
+
+
+    .icons ul {
+        list-style-type:none;
+        float: right;
+
+    }
+
+    .icons ul li {
+        display: tabll; 
+        padding: 0px 0px;
+        width: 45%;
+        float: left;
+ 
+
+    }
+
+    .icons ul li img {
+        display: inline-block; 
+        padding: 30px 25px
+    }
+
+
+    .conteudo-x {
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+
+
+    .left-custom {
+        left: 80%;
+    }
+
+    .header {
+      top: 0;
+      /*width: 100%;*/
+      height: 120px;
+      background: #fff;
+      padding: 8px 0;
+      z-index: 10;
+      border: 1px solid rgba(28,28,28,.07);
+      box-shadow: 0 7px 6px 0 rgba(33,43,54,.04);
+        
+    }
+
+    .header .logo {
+    /*padding: 12px;*/
+    max-width: 25%;
+
+    }
+
+    .header_menu ul li a.active {
+      box-shadow: inset 0 4px 0 0 hsla(0, 0%,71%, .5);
+      color: gray;
+      font-weight: 400;  
+    }
+
+    .card-total {
+      display: flex;
+      -webkit-box-align: start;
+      align-items: flex-start;
+      -webkit-box-pack: justify;
+      justify-content: space-between;
+      padding: 44px 32px;
+      border-radius: 10px;
+      box-shadow: 0 8px 10px 0 rgba(31,70,88,.04);
+      overflow: hidden;
+      position: relative;
+      margin: 10px;
+      background: #fff;
+      border:1px solid #dbe9f5; 
+    }
+
+
+}
